@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/static/webjars/jquery/3.6.4/dist/jquery.js}"></script>
+    <script th:src="@{/static/js/cmm.js}"></script>
+</head>
+<body>
+11111
+<button id="send">전송</button>
+
+<script type="text/javascript">
+
+    $(document).ready(() => {
+
+
+        $('#send').click(() => {
+            const data = {};
+            data.result = "OK";
+
+            CMM.submitData("/addData", "POST", data, (result) => {
+
+                console.log(result);
+
+            });
+        })
+
+    })
+
+</script>
+</body>
+</html>
